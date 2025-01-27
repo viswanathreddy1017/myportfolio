@@ -292,8 +292,8 @@
 														<h5>Hyderabad,India</h5>
 														<h5> Infor Solution wizard Project </h5> -->
 														<p class="description">
-													<br><h4 class="contact-add-head">Front-End Development, Mockup Design, Database Management, and Automation Testing </h4>
-													<p>During my time with the Solwiz project, I was involved in various roles:</p>
+													<br><h4 class="contact-add-head">Automation Development, Automation Scripting, Database Management, and Automation Initiatives </h4>
+													<p>During my time with the Cloud Suite project, I was involved in various roles:</p>
 													<br><h3 class="contact-add-head">Automation Development:</h3><br>
 													<p>I automated the Cloud Suite Portal (CSP) using RedwoodHQ and the Page Object Model, focusing on critical operations such as clone and refresh across various environments. This ensured seamless functionality, reducing errors and manual intervention.<br></p>
 													<br><h3 class="contact-add-head"> Database Management:</h3><br>
@@ -532,16 +532,19 @@
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
 								<div class="contact-form">
-									<form>
+									<form  method="POST" id="form">
 										<div class="row">
+										 <input type="hidden" name="access_key" value="d3fd07b2-7064-4d93-b78f-7a97197cec79">
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
 												  <input type="text" class="form-control" id="name" placeholder="Name*" name="name">
+												  <div class="error-txt">Name can't be blank</div>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
 													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
+													<div class="error-txt">Email can't be blank</div>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
@@ -549,6 +552,7 @@
 											<div class="col-sm-12">
 												<div class="form-group">
 													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+													<div class="error-txt">Add the context please!!</div>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
@@ -556,16 +560,18 @@
 											<div class="col-sm-12">
 												<div class="form-group">
 													<textarea class="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
+													<div class="error-txt">Message can't be blank</div>
 												</div><!--/.form-group-->
 											</div><!--/.col-->
 										</div><!--/.row-->
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="single-contact-btn">
-													<a class="contact-btn"  role="button">submit</a>
+													<button class="contact-btn"  role="button">submit</button>
 												</div><!--/.single-single-contact-btn-->
 											</div><!--/.col-->
 										</div><!--/.row-->
+										<div id="result"></div>
 									</form><!--/form-->
 								</div><!--/.contact-form-->
 							</div><!--/.single-contact-box-->
@@ -655,6 +661,8 @@
 
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
 		
         
         <!--Custom JS-->
