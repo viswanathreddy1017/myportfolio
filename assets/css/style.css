@@ -745,6 +745,19 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     resize: none;
 }
 
+.contact-form .error-txt {
+	padding: 25px;
+    font-size: 14px;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    box-shadow: none;
+    outline: 0!important;
+    background: #fff;
+    color: #636a82;
+    resize: none;
+	display: none;
+}
+
 /*--contct button--*/
 .contact-form .single-contact-btn {
     display:flex;

@@ -122,6 +122,86 @@ $(document).ready(function(){
         	$(".header-text h2,.header-text p").addClass("animated fadeInUp").css({'opacity':'0'});
             $(".header-text a").addClass("animated fadeInDown").css({'opacity':'0'});
         });
+		
+	//contact Form	
+		/*const form  = document.querySelector('form');
+		const Name  = document.getElementById('name');
+		const email  = document.getElementById('email');
+		const subject  = document.getElementById('subject');
+		const message  = document.getElementById('comment');
+		
+		
+		function sendEmail(){
+			const bodymessage  = 'Full Name: ${Name.value}<br> Email: ${email.value}<br> subject: ${subject.value}<br> Message: ${message.value}';
+
+			Email.send({
+				Host : "smtp.mailendo.com",
+				Username : "username",
+				Password : "password",
+				To : 'them@website.com',
+				From : "you@isp.com",
+				Subject : subject.value,
+				Body : bodymessage
+				}).then(
+				message => alert(message)
+				);
+				}
+				form.addEventListener("submit", (e) => { 
+				e.preventDefault();
+				sendEmail();*/
+   
+				const form = document.getElementById('form');
+				const result = document.getElementById('result');
+				form.addEventListener('submit', function(e) {
+					e.preventDefault();
+					 console.log("Form submitted!"); // Check if the event listener is working
+
+				const formData = new FormData(form);
+				console.log("FormData:", formData); // Check if FormData is populated
+
+				const object = Object.fromEntries(formData);
+				console.log("Object:", object); // Check the object
+
+				const json = JSON.stringify(object);
+				console.log("JSON:", json); // Check the JSON
+					
+					result.innerHTML = "Please wait..."
+					fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+			    console.log("Full Response:", response); // Log the full response object
+    try {
+
+            let json = await response.json();
+			console.log("JSON Response:", json);
+            if (response.status == 200) {
+                result.innerHTML = "Form submitted successfully";
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+	}catch (error) {
+        console.error("Error parsing JSON:", error);
+        result.innerHTML = "Error processing response.";
+    }
+        })
+        .catch(error => {
+           console.error("Fetch Error:", error);
+            result.innerHTML = "Something went wrong!";
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+});
 
 });	
 	
