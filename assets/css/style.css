@@ -352,7 +352,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #38b3bd;}
 /* Show the hover text on hover */
 .single-about-add-info:hover .hover-text {
     visibility: visible;
-    opacity: 1;
+    opacity: 2;
 }
 .certifications {
   background: #f9f9f9;
