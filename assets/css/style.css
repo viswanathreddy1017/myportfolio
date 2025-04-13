@@ -330,6 +330,30 @@ nav.navbar.bootsnav .navbar-toggle i{color: #38b3bd;}
         Certifications
 --------------------------------------*/
 /* Certifications Section */
+
+/* Hidden hover text */
+.single-about-add-info .hover-text {
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Background color for the text */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 120%; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* Show the hover text on hover */
+.single-about-add-info:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
+}
 .certifications {
   background: #f9f9f9;
   padding: 50px 0;
